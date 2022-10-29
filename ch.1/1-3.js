@@ -4,4 +4,25 @@
 // perform this operation in place.)
 // EXAMPLE
 // Input: "Mr John Smith ", 13
-// Output: "Mr%20John%20Smith" 
+// Output: "Mr%20John%20Smith"
+
+let input = "Mr John Smith ";
+
+//all spaces into '%20", true length of the string?, return updated string
+
+function URLify(str){
+    let strCopy = str.trim().split('');
+    // console.log(strCopy);
+    for(let i = 0; i < strCopy.length; i++){
+        if (strCopy[i]===' '){
+            strCopy[i]='%20';
+        }
+    }
+    return strCopy.join('');
+}
+//analysis 
+//time O(N) just depends on size of string
+//space 0(1) 
+
+//test
+console.log(URLify(input),"Mr%20John%20Smith");
